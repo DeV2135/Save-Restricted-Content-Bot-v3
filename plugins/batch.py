@@ -125,7 +125,7 @@ async def get_msg(c, u, i, d, lt):
                         base_id = str(i)[4:]  # Remove -100
                         chat_id_dash = f"-{base_id}"
                     elif i.isdigit():
-                        chat_id_100 = f"-{i}"
+                        chat_id_100 = f"-100{i}"
                         chat_id_dash = f"-{i}"
                     else:
                         chat_id_100 = i
@@ -556,6 +556,7 @@ async def text_handler(c, m):
         finally:
             await remove_active_batch(uid)
             Z.pop(uid, None)
+
 
 
 
